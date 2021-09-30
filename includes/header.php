@@ -6,7 +6,7 @@
 
   <div class="navbar">
     <a href="/index.php">Home</a>
-    <a href="/Personal_projects/construction.php">About</a>
+    <a href="/about.php">About</a>
     <div class="dropdown">
       <button class="dropbtn">Pers. Projects
         <i class="fa fa-caret-down"></i>
