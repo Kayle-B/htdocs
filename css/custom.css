@@ -43,5 +43,24 @@ body{
 /* Footer */
 
 .title{
+    grid-column: 2;
     text-align: center;
+}
+
+
+/* Pokemon API */
+.pokemonImage{
+    display: grid;
+    grid-row: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+}
+.pokemonList{
+    list-style-type: none;
+}
+.PokeAPI{
+    text-align: center
+}
+.center{
+    
 }
