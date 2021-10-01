@@ -4,7 +4,7 @@
 
 <div id="main">
   <div class="content">
-  <h1 class="title">Search a Pokemon! (WIP)</h1>
+  <h1 class="title">Search a Pokemon!</h1>
   <div class="PokeAPI">
     <div class="input">
       <label for="">Pokemon: </label>
@@ -18,13 +18,13 @@
         <li id="height"></li>
       </ul>
       <div class="pokemonImage">
-        <img id="pokemonImage_Front">
         <label id="imageFront"></label>
+        <img id="pokemonImage_Front">
       </div>
 
         <div class="pokemonImage">
-          <img id="pokemonImage_Back">
           <label id="imageBack"></label>
+          <img id="pokemonImage_Back">
         </div>
     </div>
   </div>
