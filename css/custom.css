@@ -1,5 +1,5 @@
 /* FONTS */
-  
+
 *{
     font-family: 'Roboto-Regular';
 }
@@ -47,7 +47,6 @@ body{
     text-align: center;
 }
 
-
 /* Pokemon API */
 .pokemonImage{
     margin-left: auto;
@@ -65,34 +64,97 @@ body{
 .data{
     float: right;
 }
-.stats{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
 
 /* SIMPLEMMO */
+.cards{
+  display: flex;
+  align-items: baseline;
+  justify-content:space-evenly;
+}
+
 .card{
-    background-color: gray;
-    border-radius: .4em;
-    width: 25%;
-    height: auto;
+  border-radius: .4em;
+  width: 25%;
+  height: auto;
+
 }
 .card-head{
-    height: 2em;
-    text-align: center;
+  height: 2em;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
 }
 .card-content{
-    background-color: red;
-    height: auto;
-    padding-left: 5%;
-    padding-right: 5%;
+  background-color: rgb(240, 240, 240);
+  height: auto;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 .card-item{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
 }
 .last-card-item{
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* stats card */
+.s-card-head-stats{
+  border-bottom: 3px solid #80DEEA;
+  background-color: #E0F7FA;
+}
+.s-card-stats{
+  border: 3px solid #80DEEA;
+}
+
+/* skills card */
+.s-card-head-skills{
+  border-bottom: 3px solid #FFE082;
+  background-color: #FFF8E1;
+}
+.s-card-skills{
+  border: 3px solid #FFE082;
+}
+
+
+
+/* TAG */
+.tag{
+  border-radius: .4em;
+  width: 100%;
+  height: auto;
+
+}
+.tag-head{
+  height: 2em;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+}
+.tag-content{
+  background-color: rgb(240, 240, 240);
+  height: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.tag-item{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.s-tag-head-bosses{
+  border-bottom: 3px solid #EF9A9A;
+  background-color: #FFEBEE;
+}
+.s-tag-bosses{
+  border: 3px solid #EF9A9A;
 }
