@@ -48,9 +48,9 @@ function getSMMO_stats() {
 
         if(document.getElementById('def-data') != null){
           document.getElementById('lvl-data').innerHTML = SimpleData.level;
-          document.getElementById('def-data').innerHTML = '(' + SimpleData.bonus_def + ' +)' + SimpleData.def;
-          document.getElementById('dex-data').innerHTML = '(' + SimpleData.bonus_dex + ' +) '+ SimpleData.dex;
-          document.getElementById('str-data').innerHTML = '(' + SimpleData.bonus_str + ' +) '+ SimpleData.str;
+          document.getElementById('def-data').innerHTML = '(' + SimpleData.bonus_def + ' +) ' + SimpleData.def;
+          document.getElementById('dex-data').innerHTML = '(' + SimpleData.bonus_dex + ' +) ' + SimpleData.dex;
+          document.getElementById('str-data').innerHTML = '(' + SimpleData.bonus_str + ' +) ' + SimpleData.str;
         }
         else{
           card_item_lvl.appendChild(lvl_text);
