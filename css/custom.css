@@ -157,3 +157,47 @@ body{
 .s-tag-bosses{
   border: 3px solid #EF9A9A;
 }
+.Low{
+  color: green;
+}
+.Medium{
+  color: yellow;
+}
+.High{
+  color: red;
+}
+
+.bosses{
+  margin-top: 30px;
+  border: 3px solid #EF9A9A;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.table{
+  background-color: rgb(240, 240, 240);
+  border-collapse: collapse;
+  width: 100%;
+}
+.table td, .table th{
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.table th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #EF9A9A;
+}
+
+.bosses-head{
+  background-color: #FFEBEE;
+  border-bottom: 3px solid #EF9A9A;
+
+
+
+  height: 2em;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 25px;
+}
+

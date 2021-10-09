@@ -1,3 +1,5 @@
+var myLevel;
+
 function getSMMO_stats() {
     $.ajax({
         url: "/API_Data/SMMO_stats.php",
@@ -16,6 +18,7 @@ function getSMMO_stats() {
         var lvl_data = document.createElement('p');
         lvl_data.id = 'lvl-data';
         lvl_data.innerHTML = SimpleData.level;
+        myLevel = SimpleData.level;
 
         //SET DEF DATA
         var card_item_def = document.getElementById('card-item-def');
@@ -104,7 +107,6 @@ function getSMMO_stats() {
     });
   }
 
-
   function getSMMO_bosses() {
     $.ajax({
         url: "/API_Data/SMMO_bosses.php",
@@ -112,21 +114,52 @@ function getSMMO_stats() {
     })
       .done(function(data) {
       SimpleData = JSON.parse(data);
-      var Parent = document.getElementById('bosses-content');
+
+
+      // var Parent = document.getElementById('bosses-content');
       for(let i = 1; i < SimpleData.length; i++){
-        var card_item = document.createElement('div');
-        if(i == SimpleData.length - 1){
-          card_item.className = 'last-card-item';
+
+        var risk;
+        if((100 / SimpleData[i].level * myLevel) > 140){
+          risk = 'Low';
         }
-        else{
-          card_item.className = 'card-item';
+        else if((100 / SimpleData[i].level * myLevel) > 110){ // CHANGE THIS LATER TO BE EXACT
+          risk = 'Medium';
         }
-        var boss_name = document.createElement('p');
+        else if((100 / SimpleData[i].level * myLevel) > 80){
+          risk = 'High';
+        }
+
+        // var card_item = document.createElement('div');
+        // if(i == SimpleData.length - 1){
+        //   card_item.className = 'last-card-item';
+        // }
+        // else{
+        //   card_item.className = 'card-item';
+        // }
+
+        var table_parent = document.getElementById('table-row');
+        var table_row = document.createElement('tr');
+
+        var boss_name = document.createElement('td');
         boss_name.innerHTML = SimpleData[i].name;
+        boss_name.className = 'table-center';
 
-        var boss_level = document.createElement('p');
-        boss_level.innerHTML = 'Level: ' + SimpleData[i].level;
+        var boss_level = document.createElement('td');
+        boss_level.innerHTML = SimpleData[i].level;
+        boss_level.className = 'table-center';
 
+        var boss_risk = document.createElement('td');
+        boss_risk.innerHTML = risk;
+        boss_risk.className = 'table-center '+ risk;
+        boss_risk.id = 'customid' + i;
+
+
+
+        // boss_risk.innerHTML = risk;
+        // boss_risk.className = risk;
+        // var boss_level = document.createElement('p');
+        // boss_level.innerHTML = 'Level: ' + SimpleData[i].level;
 
         var eTime = SimpleData[i].enable_time;
         var countDownDate = eTime * 1000;
@@ -136,30 +169,31 @@ function getSMMO_stats() {
         var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000)
-
-        var boss_time = document.createElement('p');
-        boss_time.innerHTML = days + " days " + hours + " hours "
-        + minutes + " minutes " + seconds + " seconds ";
+        var boss_time = document.createElement('td');
+        boss_time.innerHTML = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds ";
         boss_time.id = SimpleData[i].id;
 
         if(document.getElementById(SimpleData[i].id) == null){
-          Parent.appendChild(card_item);
-          card_item.appendChild(boss_name);
-          card_item.appendChild(boss_time);
-          card_item.appendChild(boss_level);
+          // Parent.appendChild(card_item);
+          // card_item.appendChild(boss_name);
+          // card_item.appendChild(boss_time);
+          // card_item.appendChild(boss_risk);
+          // card_item.appendChild(boss_level);
+          table_parent.appendChild(table_row);
+          table_row.appendChild(boss_name);
+          table_row.appendChild(boss_time);
+          table_row.appendChild(boss_risk);
+          table_row.appendChild(boss_level);
         }
         else{
           document.getElementById(SimpleData[i].id).innerHTML = days + " days " + hours + " hours "
           + minutes + " minutes " + seconds + " seconds ";
+          document.getElementById('customid'+i).innerHTML = risk;
+          document.getElementById('customid'+i).className = risk;
         }
-
       }
-
     });
   }
-
-
-
 // TIMER
 
   time=setInterval(function(){
