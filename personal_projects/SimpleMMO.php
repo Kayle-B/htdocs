@@ -24,10 +24,6 @@
       </div>
     </div>
 
-    <!-- <div class="tag s-tag-bosses" id="bosses_table" >
-        <div class="tag-head s-tag-head-bosses" id="tag-head">Bosses</div>
-        <div class="tag-content" id="bosses-content"></div>
-    </div> -->
   <div class="bosses">
     <div class="bosses-head">Bosses</div>
     <table class="table">

@@ -115,8 +115,6 @@ function getSMMO_stats() {
       .done(function(data) {
       SimpleData = JSON.parse(data);
 
-
-      // var Parent = document.getElementById('bosses-content');
       for(let i = 1; i < SimpleData.length; i++){
 
         var risk;
@@ -129,14 +127,6 @@ function getSMMO_stats() {
         else if((100 / SimpleData[i].level * myLevel) > 80){
           risk = 'High';
         }
-
-        // var card_item = document.createElement('div');
-        // if(i == SimpleData.length - 1){
-        //   card_item.className = 'last-card-item';
-        // }
-        // else{
-        //   card_item.className = 'card-item';
-        // }
 
         var table_parent = document.getElementById('table-row');
         var table_row = document.createElement('tr');
@@ -154,13 +144,6 @@ function getSMMO_stats() {
         boss_risk.className = 'table-center '+ risk;
         boss_risk.id = 'customid' + i;
 
-
-
-        // boss_risk.innerHTML = risk;
-        // boss_risk.className = risk;
-        // var boss_level = document.createElement('p');
-        // boss_level.innerHTML = 'Level: ' + SimpleData[i].level;
-
         var eTime = SimpleData[i].enable_time;
         var countDownDate = eTime * 1000;
         var now = new Date().getTime();
@@ -174,11 +157,6 @@ function getSMMO_stats() {
         boss_time.id = SimpleData[i].id;
 
         if(document.getElementById(SimpleData[i].id) == null){
-          // Parent.appendChild(card_item);
-          // card_item.appendChild(boss_name);
-          // card_item.appendChild(boss_time);
-          // card_item.appendChild(boss_risk);
-          // card_item.appendChild(boss_level);
           table_parent.appendChild(table_row);
           table_row.appendChild(boss_name);
           table_row.appendChild(boss_time);
