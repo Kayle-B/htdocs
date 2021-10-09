@@ -192,12 +192,22 @@ body{
 .bosses-head{
   background-color: #FFEBEE;
   border-bottom: 3px solid #EF9A9A;
-
-
-
   height: 2em;
   padding-top: 10px;
   text-align: center;
   font-size: 25px;
+}
+
+@media (max-width: 900px) {
+  .cards{
+    display: block;
+    justify-content: center;
+    margin-left: 6em;
+  }
+  .card{
+    align-content: center;
+    width: 200px;
+    margin-bottom: 20px;
+  }
 }
 

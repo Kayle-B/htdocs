@@ -65,7 +65,6 @@ function getSMMO_stats() {
           card_item_str.appendChild(str_text);
           card_item_str.appendChild(str_data);
         }
-
         //SET STR DATA
     });
   }
