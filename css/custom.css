@@ -128,7 +128,7 @@ body{
   border-radius: .4em;
   width: 100%;
   height: auto;
-
+  margin-top: 30px;
 }
 .tag-head{
   height: 2em;
@@ -137,7 +137,6 @@ body{
   font-size: 25px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-
 }
 .tag-content{
   background-color: rgb(240, 240, 240);

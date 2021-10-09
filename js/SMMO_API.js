@@ -104,6 +104,7 @@ function getSMMO_stats() {
     });
   }
 
+
   function getSMMO_bosses() {
     $.ajax({
         url: "/API_Data/SMMO_bosses.php",
@@ -122,18 +123,34 @@ function getSMMO_stats() {
         }
         var boss_name = document.createElement('p');
         boss_name.innerHTML = SimpleData[i].name;
-        boss_name.id = SimpleData[i].id;
 
         var boss_level = document.createElement('p');
-        boss_level.innerHTML = SimpleData[i].level;
+        boss_level.innerHTML = 'Level: ' + SimpleData[i].level;
+
+
+        var eTime = SimpleData[i].enable_time;
+        var countDownDate = eTime * 1000;
+        var now = new Date().getTime();
+        var timeRemaining = countDownDate - now;
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000)
+
+        var boss_time = document.createElement('p');
+        boss_time.innerHTML = days + " days " + hours + " hours "
+        + minutes + " minutes " + seconds + " seconds ";
+        boss_time.id = SimpleData[i].id;
 
         if(document.getElementById(SimpleData[i].id) == null){
           Parent.appendChild(card_item);
           card_item.appendChild(boss_name);
+          card_item.appendChild(boss_time);
           card_item.appendChild(boss_level);
         }
         else{
-
+          document.getElementById(SimpleData[i].id).innerHTML = days + " days " + hours + " hours "
+          + minutes + " minutes " + seconds + " seconds ";
         }
 
       }
@@ -149,4 +166,6 @@ function getSMMO_stats() {
     getSMMO_stats();
     getSMMO_skills();
     getSMMO_bosses();
-  },5000);
+  },10000);
+
+

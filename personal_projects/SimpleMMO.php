@@ -22,13 +22,13 @@
         <div class="card-head s-card-head-skills" id="card-head">Skills</div>
         <div class="card-content" id="skills-content"></div>
       </div>
-
     </div>
 
-    <div class="tag s-tag-bosses">
+    <div class="tag s-tag-bosses" id="bosses_table" >
         <div class="tag-head s-tag-head-bosses" id="tag-head">Bosses</div>
         <div class="tag-content" id="bosses-content"></div>
-      </div>
+    </div>
+
   </div>
 </div>
 
