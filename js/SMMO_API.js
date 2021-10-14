@@ -1,11 +1,12 @@
 var myLevel;
-
+var user_id = 658071;
 function getSMMO_stats() {
     $.ajax({
         url: "/API_Data/SMMO_stats.php",
         method: "GET",
         })
         .done(function(data) {
+          console.log(data);
         SimpleData = JSON.parse(data);
 
         document.getElementById('username').innerHTML = 'Username: ' + SimpleData.name;
@@ -79,6 +80,7 @@ function getSMMO_stats() {
 
         var Parent = document.getElementById('skills-content');
         SimpleData.forEach(data => {
+          // COUNT TOTAL items in foreach. When number is last item number last card class
           var card_item = document.createElement('div');
           if(data.skill == 'crafting'){
             card_item.className = 'last-card-item';
@@ -184,9 +186,7 @@ var bar = document.getElementById('bar');
 var width = 0;
 
 function resetBar(width){
-  console.log(width);
   width = 0;
-  console.log(width);
   bar.style.width = width + "%";
 }
 

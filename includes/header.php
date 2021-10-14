@@ -1,5 +1,8 @@
 <?php
   include(dirname(__DIR__).'/includes/head.php');
+  if(session_status() === PHP_SESSION_NONE){
+    session_start();
+  }
 ?>
 <header id="header">
 <a class="logo" href="/index.php"><img class="logo" src="/img/Logo.png" alt=""></a>
