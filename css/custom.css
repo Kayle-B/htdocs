@@ -43,7 +43,6 @@ body{
 /* Footer */
 
 .title{
-    grid-column: 2;
     text-align: center;
 }
 
@@ -64,6 +63,14 @@ body{
 .data{
     float: right;
 }
+/* HOME */
+.HomeToNews{
+ text-align: center;
+ text-decoration: none;
+ font-size: 30px;
+ align-content: center;
+}
+
 
 /* SIMPLEMMO */
 .cards{
@@ -198,6 +205,18 @@ body{
   font-size: 25px;
 }
 
+#loadingbar{
+  text-align: center;
+}
+#bar{
+  width: 10%;
+  height: 30px;
+  background-color: #04AA6D;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
 @media (max-width: 900px) {
   .cards{
     display: block;
@@ -211,3 +230,35 @@ body{
   }
 }
 
+
+/* FAKE NEWS */
+.news-content{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.news-item{
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid black;
+}
+.news-item-right p{
+  margin-top: 0;
+  margin-right: 20px;
+}
+.news-item-left p{
+  margin-top: 0;
+  margin-left: 20px;
+}
+.news-item-left img{
+  width: 300px;
+  height: auto;
+}
+.news-header{
+  text-align: center;
+  margin-bottom: 90px;
+}
+.news-header img{
+  width: 500px;
+  height: auto;
+}

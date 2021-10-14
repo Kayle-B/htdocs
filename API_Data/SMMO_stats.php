@@ -23,5 +23,4 @@
     curl_close($curl);
     echo $resp;
     die();
-
 ?>

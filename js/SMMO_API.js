@@ -173,10 +173,35 @@ function getSMMO_stats() {
   }
 // TIMER
 
-  time=setInterval(function(){
-    getSMMO_stats();
-    getSMMO_skills();
-    getSMMO_bosses();
-  },10000);
 
+time=setInterval(function(){
+  getSMMO_stats();
+  getSMMO_skills();
+  getSMMO_bosses();
+},10000);
+
+var bar = document.getElementById('bar');
+var width = 0;
+
+function resetBar(width){
+  console.log(width);
+  width = 0;
+  console.log(width);
+  bar.style.width = width + "%";
+}
+
+function moveBar(){
+  resetBar(width);
+  id = setInterval(frame, 1000);
+  function frame(){
+    if(width >= 100){
+      clearInterval(id);
+    }
+    else{
+      width+= 10;
+      bar.style.width = width + "%";
+      bar.innerHTML = width + "%";
+    }
+  }
+}
 

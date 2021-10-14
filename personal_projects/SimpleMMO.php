@@ -6,7 +6,10 @@
   <div class="content SMMO-content">
     <h1 class="title">My SimpleMMO data</h1>
     <h2 class="title" id="username"></h2>
-
+    <div id="loadingbar">
+      <div id="bar">10%</div>
+    </div>
+    <button class="title" onclick="moveBar()">Click</button>
     <div class="cards">
       <div class="card s-card-stats">
         <div class="card-head s-card-head-stats" id="card-head">Stats</div>

@@ -23,10 +23,11 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="/school_projects/webserver_api.php">Webserver (API)</a>
+      <a href="/school_projects/Fakenews.php">FakeNews</a>
+      <a href="/school_projects/webserver_api.php">Webserver (API)</a>
       </div>
     </div>
-  </div> 
+  </div>
   <img class="pepe" src="/img/Pepe.png" alt="">
 
 </header>
