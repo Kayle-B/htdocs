@@ -1,4 +1,5 @@
 var myLevel;
+
 function getSMMO_stats() {
     $.ajax({
         url: "/API_Data/SMMO_stats.php",
@@ -6,8 +7,22 @@ function getSMMO_stats() {
         })
         .done(function(data) {
         SimpleData = JSON.parse(data);
-        document.getElementById('username').innerHTML = 'Username: ' + SimpleData.name;
+        if(SimpleData.error != null){
+          var parent = document.getElementById('error-spot');
+          var child = document.createElement('p');
+          child.innerHTML = SimpleData.error;
+          child.className = "error";
+          child.id = "error"
+          if(document.getElementById("error") != null){
+            document.getElementById("error").innerHTML = SimpleData.error;
+          }
+          else{
+            parent.appendChild(child);
+          }
+        }
+        else{
 
+        document.getElementById('username').innerHTML = 'Username: ' + SimpleData.name;
         // STATS
         //SET STR DATA
         var card_item_lvl = document.getElementById('card-item-lvl');
@@ -64,6 +79,7 @@ function getSMMO_stats() {
           card_item_str.appendChild(str_data);
         }
         //SET STR DATA
+      }
     });
   }
 
@@ -75,11 +91,11 @@ function getSMMO_stats() {
         })
         .done(function(data) {
         SimpleData = JSON.parse(data);
+        if(SimpleData.error == null){
 
         var Parent = document.getElementById('skills-content');
         SimpleData.forEach(data => {
           counting++;
-          // COUNT TOTAL items in foreach. When number is last item number last card class
           var card_item = document.createElement('div');
           if(counting == SimpleData.length){
             card_item.className = 'last-card-item';
@@ -104,6 +120,7 @@ function getSMMO_stats() {
             card_item.appendChild(card_value);
           }
         });
+      }
     });
   }
 

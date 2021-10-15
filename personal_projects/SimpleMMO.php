@@ -3,9 +3,12 @@
 
 ?>
 
+
+
 <div id="main">
   <div class="content SMMO-content">
     <h1 class="title">My SimpleMMO data</h1>
+    <div id="error-spot"></div>
     <form class="center" action="/personal_projects/SimpleMMO.php" method="POST">
       <label for="">User ID</label>
       <input name="User_id" type="text">
@@ -64,7 +67,7 @@
 ?>
 
 <script>
-  getSMMO_stats();
-  getSMMO_skills();
-  getSMMO_bosses();
+    getSMMO_stats();
+    getSMMO_skills();
+    getSMMO_bosses();
 </script>
