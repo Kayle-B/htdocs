@@ -13,7 +13,6 @@
         </ul>
     </div>
   <div>
-    <p id="cookie">This is a test</p>
   </div>
 
 

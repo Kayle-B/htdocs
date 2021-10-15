@@ -6,23 +6,23 @@
 <div id="main">
   <div class="content SMMO-content">
     <h1 class="title">My SimpleMMO data</h1>
-    <h2 class="title" id="username"></h2>
-    <form action="/personal_projects/SimpleMMO.php" method="POST">
-      <label for="">Username</label>
+    <form class="center" action="/personal_projects/SimpleMMO.php" method="POST">
+      <label for="">User ID</label>
       <input name="User_id" type="text">
       <input type="submit" name="submit" value="Submit">
     </form>
+    <h2 class="title" id="username"></h2>
     <?php
     if(isset($_POST["submit"])){
       $_SESSION["User_id"] = $_POST["User_id"];
-      echo $_SESSION["User_id"];
     }
 
     ?>
-    <div id="loadingbar">
+    <!-- <div id="loadingbar">
       <div id="bar">10%</div>
     </div>
-    <button class="title" onclick="moveBar()">Click</button>
+    <button class="title" onclick="moveBar()">Click</button> -->
+    <?php if(isset($_SESSION["User_id"])) : ?>
     <div class="cards">
       <div class="card s-card-stats">
         <div class="card-head s-card-head-stats" id="card-head">Stats</div>
@@ -39,6 +39,7 @@
         <div class="card-content" id="skills-content"></div>
       </div>
     </div>
+    <?php endif;?>
 
   <div class="bosses">
     <div class="bosses-head">Bosses</div>
